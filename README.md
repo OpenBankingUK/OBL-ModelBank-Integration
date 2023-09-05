@@ -208,10 +208,6 @@ Ozone Model Bank Collection Files
 
 ## Mobile Application
 
-# Integrating a TPP with the Model Bank v3.1.11 provided by OBIE (2)
-
-# Mobile Application
-
 TPPs that want to test their app-to-app or web-to-app redirects can use the new version of Ozone Authenticator App using the instructions below:
 
 # 1\. For Model bank users - Sandbox Mode with Mobile and Web Heimdall UI supported in parallel
