@@ -38,7 +38,7 @@ The steps below will help TPPs validate their setup and help better understand t
 
 Ozone Model Bank Collection Files
 
-[UK OBIE v3.1.11-915.postman_collection.json](./attachments/UK%20OBIE%20v3.1.11.postman_collection.json)
+[UK OBL v3.1.11-915.postman_collection.json](./attachments/UK%20OBL%20v3.1.11.postman_collection.json)
 # Endpoints
 
 ## OpenID Connect endpoints
@@ -272,11 +272,11 @@ Click directly on this [OBL | Sandbox](https://www.auth-app.ozoneapi.co.uk/8pozs
 2.  Execute step 3 in the collection to get deep link. This will be in the form
     
 
-“[https://www.auth-app.ozoneapi.co.uk/8pozskdn?client\_id=<>&response\_type=<>&scope=<>&request=](https://www.auth-app.ozoneapi.co.uk/7ob23ukz?client_id=3d8754f1-3f4f-4cd2-a7cd-c30071da4a16&response_type=code&scope=openid%20accounts&request=eyJhbGciOiJub25lIn0.eyJhdWQiOiJodHRwczovL2F1dGgxLnN0YWdpbmcub2JpZS51ay1odWIub3pvbmVhcGkuY28udWsiLCJleHAiOjE2OTI5NjUxODQsImlzcyI6IjNkODc1NGYxLTNmNGYtNGNkMi1hN2NkLWMzMDA3MWRhNGExNiIsInNjb3BlIjoib3BlbmlkIGFjY291bnRzIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly93d3cuYXV0aC1hcHAub3pvbmVhcGkuY28udWsvc2ltcGxlLXJlZGlyZWN0LXVybCIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIiwiY2xpZW50X2lkIjoiM2Q4NzU0ZjEtM2Y0Zi00Y2QyLWE3Y2QtYzMwMDcxZGE0YTE2Iiwibm9uY2UiOiIxYzc4NjBlOS1iZTQyLTRjNTctYjEyMS0zM2VmZTU2MmJhNWMiLCJzdGF0ZSI6ImJkN2QzNTFkLTNmZDAtNDIyNy1hNzU1LTVlYjg0NmM2YTc3NSIsIm5iZiI6MTY5Mjk2NDY4NCwibG9naW5faGludCI6InJhc3RhbWFuIiwicmVzcG9uc2VUeXBlIjoiY29kZSIsImNsYWltcyI6eyJpZF90b2tlbiI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJhYWMtMWNlNjE0OWMtZjc2Yy00ODAyLThjM2MtYWVjOTkyZTU1ZTYwIiwiZXNzZW50aWFsIjp0cnVlfX19fQ.)<>”
+“[https://www.auth-app.ozoneapi.co.uk/8pozskdn?client\_id=<>&response\_type=<>&scope=<>&request=<>](https://www.auth-app.ozoneapi.co.uk/7ob23ukz?client_id=3d8754f1-3f4f-4cd2-a7cd-c30071da4a16&response_type=code&scope=openid%20accounts&request=eyJhbGciOiJub25lIn0.eyJhdWQiOiJodHRwczovL2F1dGgxLnN0YWdpbmcub2JpZS51ay1odWIub3pvbmVhcGkuY28udWsiLCJleHAiOjE2OTI5NjUxODQsImlzcyI6IjNkODc1NGYxLTNmNGYtNGNkMi1hN2NkLWMzMDA3MWRhNGExNiIsInNjb3BlIjoib3BlbmlkIGFjY291bnRzIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly93d3cuYXV0aC1hcHAub3pvbmVhcGkuY28udWsvc2ltcGxlLXJlZGlyZWN0LXVybCIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIiwiY2xpZW50X2lkIjoiM2Q4NzU0ZjEtM2Y0Zi00Y2QyLWE3Y2QtYzMwMDcxZGE0YTE2Iiwibm9uY2UiOiIxYzc4NjBlOS1iZTQyLTRjNTctYjEyMS0zM2VmZTU2MmJhNWMiLCJzdGF0ZSI6ImJkN2QzNTFkLTNmZDAtNDIyNy1hNzU1LTVlYjg0NmM2YTc3NSIsIm5iZiI6MTY5Mjk2NDY4NCwibG9naW5faGludCI6InJhc3RhbWFuIiwicmVzcG9uc2VUeXBlIjoiY29kZSIsImNsYWltcyI6eyJpZF90b2tlbiI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJhYWMtMWNlNjE0OWMtZjc2Yy00ODAyLThjM2MtYWVjOTkyZTU1ZTYwIiwiZXNzZW50aWFsIjp0cnVlfX19fQ.)”
 
 It is important to note that if you directly copy the deep link generated from the Postman collection as a text on mobile and hit it, it will give an invalid request error due to the elimination of the last “.” in request param.
 
-So, either send the link on your mobile as link or convert it as QR code to scan, or use visualizer.
+So, either send the link on your mobile as a link or convert it as QR code to scan, or use visualizer.
 
 3.  Both AIS and PIS links will require biometric authentication.
     
