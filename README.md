@@ -96,67 +96,15 @@ Ozone Model Bank Collection Files
 </tr>
 
 <tr>
-<td> rora </td>
-
-<td>
-
-```json
-{
-    "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
-    "Identification" : "70000170000001",
-    "SecondaryIdentification" : "Roll No. 001",
-    "Name" : "Mr. Roberto Rastapopoulos & Mr. Mitsuhirato"
-}
-```
-
-</td>
-
-</tr>
-
-<tr>
-<td> rora </td>
-
-<td>
-
-```json
-{
-    "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
-    "Identification" : "70000170000002",
-    "SecondaryIdentification" : "Roll No. 002"
-}
-```
-
-</td>
-
-</tr>
-
-<tr>
 <td> mits </td>
 
 <td>
 
 ```json
 {
-    "SchemeName" : "UK.OBIE.IBAN",
-    "Identification" : "GB29OBI170000170000001",
-    "Name" : "Mario Carpentry"
-}
-```
-
-</td>
-
-</tr>
-
-<tr>
-<td> rora </td>
-
-<td>
-
-```json
-{
     "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
-    "Identification" : "70000170000004",
-    "Name" : "Capone Consulting"
+    "Identification" : "10000109010102",
+    "Name" : "Luigi International"
 }
 ```
 
@@ -172,8 +120,8 @@ Ozone Model Bank Collection Files
 ```json
 {
     "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
-    "Identification" : "70000170000005",
-    "Name" : "Octon Inc"
+    "Identification" : "10000109010103",
+    "Name" : "Mario International"
 }
 ```
 
@@ -189,8 +137,8 @@ Ozone Model Bank Collection Files
 ```json
 {
     "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
-    "Identification" : "70000170000006",
-    "SecondaryIdentification" : "Roll No. 002"
+    "Identification" : "10000109010101",
+    "Name" : "Mario International"
 }
 ```
 
