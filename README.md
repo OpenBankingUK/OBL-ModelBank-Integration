@@ -46,7 +46,7 @@ Ozone Model Bank Collection Files
 | Item                   | All Versions                                                                                                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Well-known endpoint    | [https://auth1.obie.uk.ozoneapi.io/.well-known/openid-configuration](https://auth1.obie.uk.ozoneapi.io/.well-known/openid-configuration)                                                   |
-| Dynamic registration   | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/dynamic-client-registration/v3.1/register](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/dynamic-client-registration/v3.1/register) |
+| Dynamic registration   | [https://rs1.obie.uk.ozoneapi.io/dynamic-client-registration/v3.2/register](https://rs1.obie.uk.ozoneapi.io/dynamic-client-registration/v3.2/register) |
 | Token endpoint         | [https://as1.obie.uk.ozoneapi.io/token](https://as1.obie.uk.ozoneapi.io/token)                                                                                                             |
 | Authorization endpoint | [https://auth1.obie.uk.ozoneapi.io/auth](https://auth1.obie.uk.ozoneapi.io/auth)                                                                                                           |
 
