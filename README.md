@@ -38,7 +38,7 @@ The steps below will help TPPs validate their setup and help better understand t
 
 Ozone Model Bank Collection Files
 
-[UK OBL v3.1.11.postman_collection.json](./attachments/UK OBL v3.1.11.postman_collection)
+[UK OBL v3.1.11.postman_collection.json](https://github.com/OpenBankingUK/OBL-ModelBank-Integration/blob/v3.1.11/attachments/UK%20OBL%20v3.1.11.postman_collection)
 # Endpoints
 
 ## OpenID Connect endpoints
