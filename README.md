@@ -38,7 +38,8 @@ The steps below will help TPPs validate their setup and help better understand t
 
 Ozone Model Bank Collection Files
 
-[UK OBIE v3.1.11-915.postman_collection.json](./attachments/UK%20OBIE%20v3.1.11-915.postman_collection.json)
+[UK OBL v3.1.11.postman_collection.json](./attachments/UK%20OBL%20v3.1.11.postman_collection)
+
 # Endpoints
 
 ## OpenID Connect endpoints
@@ -46,7 +47,7 @@ Ozone Model Bank Collection Files
 | Item                   | All Versions                                                                                                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Well-known endpoint    | [https://auth1.obie.uk.ozoneapi.io/.well-known/openid-configuration](https://auth1.obie.uk.ozoneapi.io/.well-known/openid-configuration)                                                   |
-| Dynamic registration   | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/dynamic-client-registration/v3.1/register](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/dynamic-client-registration/v3.1/register) |
+| Dynamic registration   | [https://rs1.obie.uk.ozoneapi.io/dynamic-client-registration/v3.2/register](https://rs1.obie.uk.ozoneapi.io/dynamic-client-registration/v3.2/register) |
 | Token endpoint         | [https://as1.obie.uk.ozoneapi.io/token](https://as1.obie.uk.ozoneapi.io/token)                                                                                                             |
 | Authorization endpoint | [https://auth1.obie.uk.ozoneapi.io/auth](https://auth1.obie.uk.ozoneapi.io/auth)                                                                                                           |
 
@@ -96,67 +97,15 @@ Ozone Model Bank Collection Files
 </tr>
 
 <tr>
-<td> rora </td>
-
-<td>
-
-```json
-{
-    "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
-    "Identification" : "70000170000001",
-    "SecondaryIdentification" : "Roll No. 001",
-    "Name" : "Mr. Roberto Rastapopoulos & Mr. Mitsuhirato"
-}
-```
-
-</td>
-
-</tr>
-
-<tr>
-<td> rora </td>
-
-<td>
-
-```json
-{
-    "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
-    "Identification" : "70000170000002",
-    "SecondaryIdentification" : "Roll No. 002"
-}
-```
-
-</td>
-
-</tr>
-
-<tr>
 <td> mits </td>
 
 <td>
 
 ```json
 {
-    "SchemeName" : "UK.OBIE.IBAN",
-    "Identification" : "GB29OBI170000170000001",
-    "Name" : "Mario Carpentry"
-}
-```
-
-</td>
-
-</tr>
-
-<tr>
-<td> rora </td>
-
-<td>
-
-```json
-{
     "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
-    "Identification" : "70000170000004",
-    "Name" : "Capone Consulting"
+    "Identification" : "10000109010102",
+    "Name" : "Luigi International"
 }
 ```
 
@@ -172,8 +121,8 @@ Ozone Model Bank Collection Files
 ```json
 {
     "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
-    "Identification" : "70000170000005",
-    "Name" : "Octon Inc"
+    "Identification" : "10000109010103",
+    "Name" : "Mario International"
 }
 ```
 
@@ -189,8 +138,8 @@ Ozone Model Bank Collection Files
 ```json
 {
     "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
-    "Identification" : "70000170000006",
-    "SecondaryIdentification" : "Roll No. 002"
+    "Identification" : "10000109010101",
+    "Name" : "Mario International"
 }
 ```
 
@@ -208,9 +157,79 @@ Ozone Model Bank Collection Files
 
 ## Mobile Application
 
-TPPs that want to test their app-to-app or web-to-app redirects can use the new version of Ozone Authenticator App which will be released soon for Android & iPhone.
+TPPs that want to test their app-to-app or web-to-app redirects can use the new version of Ozone Authenticator App using the instructions below:
 
-The old version of Ozone Android App is not currently supported in Model Bank v3.1.11.
+For Model bank users - Sandbox Mode with Mobile and Web Heimdall UI supported in parallel
+
+The below instructions were drafted for OBL Sandbox mobile app uplift mainly for the consumption of TPPs.
+
+1.  Install the Ozone Authenticator app from either [Play Store](https://play.google.com/store/apps/details?id=com.ozoneapi.OzoneAuthenticator) or [App Store](https://apps.apple.com/us/app/ozone-authenticator/id1592047641)
+    
+2.  Open the app and tap Continue.
+    
+
+<img src="./attachments/app_screen1.png" width="270" height="600"> 
+
+3.  Click the **\+ button** on the bottom right corner to add the model bank as the provider
+    
+
+<img src="./attachments/app_screen2.png" width="270" height="600"> 
+
+If prompted, accept the permission for the use of the camera.
+
+<img src="./attachments/app_screen3.png" width="270" height="600"> 
+
+4.  To add a provider, either scan the QR code or enter the code manually.
+    
+
+Scan the QR code below.
+
+<img src="./attachments/app_screen4.png" width="270" height="270"> 
+
+Enter provider code - “**8pozskdn**“ manually by clicking on the bottom toggle icon.
+
+<img src="./attachments/app_screen5.png" width="270" height="600"> 
+
+Or
+
+Click directly on this [OBL | Sandbox](https://www.auth-app.ozoneapi.co.uk/8pozskdn?only_add_provider=true) from your mobile browser to redirect to the registration step inside the app.
+
+5.  On being prompted for credentials enter Login Name - “**mits**” and Password - “**mits**”. Note: The credentials are case-sensitive.
+    
+
+<img src="./attachments/app_screen6.png" width="270" height="600"> 
+
+6.  Next, you will be prompted for **biometric authentication**. This could be a fingerprint scan or face id as per your device settings. Enabling biometric authentication on your device is a mandatory prerequisite for adding the provider.
+    
+7.  Next, you will be prompted for **OTP Verification**. Since this is running in Sandbox mode against test data, no actual SMS will be received on your device. Enter any **6 digits** like 123456 to proceed.
+    
+
+<img src="./attachments/app_screen7.png" width="270" height="600"> 
+
+8.  You should see a Congratulations Screen and on Continue redirected back to My Providers with the Model bank added to the list.
+    
+
+<img src="./attachments/app_screen8.png" width="270" height="600"> <img src="./attachments/app_screen9.png" width="270" height="600"> 
+
+9.  You can view the consent list by tapping the provider row on “My Providers” screen. Further, you can also revoke the consent.
+    
+
+**Consent Journey - AIS and PIS (Single Domestic Payments)**
+
+1.  Create a consent. Execute step 1 and 2 Post calls in the postman collection.
+    
+2.  Execute step 3 in the collection to get deep link. This will be in the form
+    
+
+“[https://www.auth-app.ozoneapi.co.uk/8pozskdn?client\_id=<>&response\_type=<>&scope=<>&request=<>](https://www.auth-app.ozoneapi.co.uk/7ob23ukz?client_id=3d8754f1-3f4f-4cd2-a7cd-c30071da4a16&response_type=code&scope=openid%20accounts&request=eyJhbGciOiJub25lIn0.eyJhdWQiOiJodHRwczovL2F1dGgxLnN0YWdpbmcub2JpZS51ay1odWIub3pvbmVhcGkuY28udWsiLCJleHAiOjE2OTI5NjUxODQsImlzcyI6IjNkODc1NGYxLTNmNGYtNGNkMi1hN2NkLWMzMDA3MWRhNGExNiIsInNjb3BlIjoib3BlbmlkIGFjY291bnRzIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly93d3cuYXV0aC1hcHAub3pvbmVhcGkuY28udWsvc2ltcGxlLXJlZGlyZWN0LXVybCIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIiwiY2xpZW50X2lkIjoiM2Q4NzU0ZjEtM2Y0Zi00Y2QyLWE3Y2QtYzMwMDcxZGE0YTE2Iiwibm9uY2UiOiIxYzc4NjBlOS1iZTQyLTRjNTctYjEyMS0zM2VmZTU2MmJhNWMiLCJzdGF0ZSI6ImJkN2QzNTFkLTNmZDAtNDIyNy1hNzU1LTVlYjg0NmM2YTc3NSIsIm5iZiI6MTY5Mjk2NDY4NCwibG9naW5faGludCI6InJhc3RhbWFuIiwicmVzcG9uc2VUeXBlIjoiY29kZSIsImNsYWltcyI6eyJpZF90b2tlbiI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJhYWMtMWNlNjE0OWMtZjc2Yy00ODAyLThjM2MtYWVjOTkyZTU1ZTYwIiwiZXNzZW50aWFsIjp0cnVlfX19fQ.)”
+
+It is important to note that if you directly copy the deep link generated from the Postman collection as a text on mobile and hit it, it will give an invalid request error due to the elimination of the last “.” in request param.
+
+So, either send the link on your mobile as a link or convert it as QR code to scan, or use visualizer.
+
+3.  Both AIS and PIS links will require biometric authentication.
+    
+4.  PIS will in addition require OTP verification. Since this is running in Sandbox mode against test data, no actual SMS will be received on your device. Enter any **6 digits** like 123456 to proceed.
 
 # Step-by-step guide
 
