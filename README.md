@@ -41,7 +41,7 @@ Ozone Model Bank Collection Files
 Currently, the Sandbox provides parallel running for versions v3.1.11 and v4.0, both with **FAPI 1.0 Advanced Profile** enabled.
 
 # Endpoints
-Currently, the Sandbox provides parallel running for versions v3.1.11 and v4.0. For 3.1.11 enpoint URLs, please see [Model Bank v3.1.11 documentation](https://github.com/OpenBankingUK/OBL-ModelBank-Integration/tree/v3.1.11).
+Currently, the Sandbox provides parallel running for versions v3.1.11 and v4.0. For 3.1.11 endpoint URLs, please see [Model Bank v3.1.11 documentation](https://github.com/OpenBankingUK/OBL-ModelBank-Integration/tree/v3.1.11).
 
 ## OpenID Connect endpoints
 
@@ -83,6 +83,7 @@ Currently, the Sandbox provides parallel running for versions v3.1.11 and v4.0. 
 | International Standing Orders            | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-standing-orders](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-standing-orders)                       |
 
 ## <a name="vrpendpoints"></a>Variable Recurring Payments (VRP) endpoints
+At the moment, the Model Bank v4.0 does not support the new PUT VRP or PATCH VRP endpoints introduced to allow VRP consent data to be migrated from the v3.1.x standards to the new v4.0 data schemas. These two new v4.0 VRP endpoints will be supported in a future Model Bank release.
 
 | Item                 | v4.0                                                                                                                                                         |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -151,7 +152,7 @@ Currently, the Sandbox provides parallel running for versions v3.1.11 and v4.0. 
 </table>
 
 ## **Financial ID**
-Used in x-fapi-financial-id header where requred.
+Used in x-fapi-financial-id header where required.
 
 | **Item**           |
 | ------------------ |
@@ -159,7 +160,7 @@ Used in x-fapi-financial-id header where requred.
 
 ## Mobile Application
 
-At the moment Ozone Authenticator Mobile App do not support Model Bank v4.0. Support will be added in further Model Bank releases. 
+At the moment Ozone Authenticator Mobile App does not support Model Bank v4.0. Support will be added in further Model Bank releases. 
 For support for v3.1.11, please see [Model Bank v3.1.11 documentation](https://github.com/OpenBankingUK/OBL-ModelBank-Integration/tree/v3.1.11).
 
 
@@ -239,7 +240,7 @@ Claims required in dynamic client registration for Ozone Banks:
 
 ## <a name="import_postman">Step 4: Import Environment Files and Collections To Postman (TPP)
 
-### 4.1 Import Collections and setup Enviroment in Postman (TPP)
+### 4.1 Import Collections and setup Environment in Postman (TPP)
 
 ![Image 1.jpeg](./attachments/4-1-Import-Files.png)
  
