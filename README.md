@@ -1,4 +1,4 @@
-# Integrating a TPP with the Model Bank v4.0 provided by OBIE
+# Integrating a TPP with the Model Bank v4.0 provided by OBL
 
 - [Postman Collection](#Postman-Collection)</br>
 - [FAPI Profile support](#FAPI-Profile-support)</br>
