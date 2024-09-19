@@ -1,6 +1,7 @@
-# Integrating a TPP with the Model Bank v3.1.11 provided by OBIE
+# Integrating a TPP with the Model Bank v4.0 provided by OBL
 
 - [Postman Collection](#Postman-Collection)</br>
+- [FAPI Profile support](#FAPI-Profile-support)</br>
 - [Endpoints](#Endpoints)
     - [OpenID Connect endpoints](#OpenID-Connect-endpoints)
     - [Accounts endpoints](#Accounts-endpoints)
@@ -14,17 +15,13 @@
     - [Step 2: Test TPP Transport Certificates (TPP)](#test_tpp)
     - [Step 3: Setup TPP On Model Bank (TPP/Open Banking)](#setup)
         - [3.1 Dynamic Client Registration (TPP)](#dcr)
-            - [3.1.1 Example Registration Request JWT (Python)](#jwt)
-            - [3.1.2 Request Registration Endpoint Example (Python):](#reg_endpoint)
-            - [3.1.3 Basic token acquisition (optional)](#acquisition)
-            - [3.1.4 Environment File download](#env_file_download)
     - [Step 4: Import Environment Files and Collections To Postman (TPP)](#import_postman)
     - [Step 5: PSU Authenticate and Authorize(Open Banking and TPP)](#psu_auth)
-    - [6: Steps in  PSU Consent](#psu_consent)
+    - [Step 6: Steps in  PSU Consent](#psu_consent)
     - [Step 7: Retrieve Account and Transaction Data (TPP)](#retrieve)
 
 </br>
-Open Banking (OB) offers the capability for TPPs to integrate with model banks -  Bank1 and Bank2. This model bank supports Open Banking Read/Write Standard v3.1.
+Open Banking (OB) offers the capability for TPPs to integrate with model banks -  Bank1 and Bank2. This model bank supports Open Banking Read/Write Standard v4.0.
 </br>
 </br>
 
@@ -38,9 +35,13 @@ The steps below will help TPPs validate their setup and help better understand t
 
 Ozone Model Bank Collection Files
 
-[UK OBL v3.1.11.postman_collection.json](./attachments/UK%20OBL%20v3.1.11.postman_collection)
+[UK OBL v4.0.postman_collection.json](./attachments/UK%20OBL%20v4.0.postman_collection.json)
+
+# FAPI Profile support 
+Currently, the Sandbox provides parallel running for versions v3.1.11 and v4.0, both with **FAPI 1.0 Advanced Profile** enabled.
 
 # Endpoints
+Currently, the Sandbox provides parallel running for versions v3.1.11 and v4.0. For 3.1.11 endpoint URLs, please see [Model Bank v3.1.11 documentation](https://github.com/OpenBankingUK/OBL-ModelBank-Integration/tree/v3.1.11).
 
 ## OpenID Connect endpoints
 
@@ -53,40 +54,41 @@ Ozone Model Bank Collection Files
 
 ## Accounts endpoints
 
-| Item                  |  v3.1                                                                                                                                                            |
+| Item                  |  v4.0                                                                                                                                                            |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Post-Account requests | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/account-access-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/account-access-consents) |
-| Accounts              | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/accounts](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/accounts)                               |
-| Transactions          | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/transactions](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/transactions)                       |
-| Balances              | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/balances](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/balances)                               |
-| Beneficiaries         | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/beneficiaries](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/beneficiaries)                     |
-| Direct-Debits         | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/direct-debits](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/direct-debits)                     |
-| Products              | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/products](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/products)                               |
-| Standing-Orders       | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/standing-orders](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/aisp/standing-orders)                 |
+| Post-Account requests | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/account-access-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/account-access-consents) |
+| Accounts              | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/accounts](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/accounts)                               |
+| Transactions          | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/transactions](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/transactions)                       |
+| Balances              | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/balances](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/balances)                               |
+| Beneficiaries         | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/beneficiaries](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/beneficiaries)                     |
+| Direct-Debits         | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/direct-debits](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/direct-debits)                     |
+| Products              | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/products](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/products)                               |
+| Standing-Orders       | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/standing-orders](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/aisp/standing-orders)                 |
 
 ## Payment endpoints
 
-| Item                                     | v3.1                                                                                                                                                                                               |
+| Item                                     | v4.0                                                                                                                                                                                               |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Domestic Payments Consent                | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-payment-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-payment-consents)                               |
-| Domestic Payments                        | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-payments](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-payments)                                               |
-| Domestic Scheduled Payments Consent      | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-scheduled-payment-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-scheduled-payment-consents)           |
-| Domestic Scheduled Payments              | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-scheduled-payments](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-scheduled-payments)                           |
-| Domestic Standing Orders Consent         | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-standing-order-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-standing-order-consents)                 |
-| Domestic Standing Orders                 | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-standing-orders](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-standing-orders)                                 |
-| International Payments Consent           | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-payment-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-payment-consents)                     |
-| International Payments                   | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-payments](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-payments)                                     |
-| International Scheduled Payments Consent | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-scheduled-payment-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-scheduled-payment-consents) |
-| International Scheduled Payments         | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-scheduled-payments](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-scheduled-payments)                 |
-| International Standing Orders Consent    | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-standing-order-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-standing-order-consents)       |
-| International Standing Orders            | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-standing-orders](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/international-standing-orders)                       |
+| Domestic Payments Consent                | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-payment-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-payment-consents)                               |
+| Domestic Payments                        | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-payments](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-payments)                                               |
+| Domestic Scheduled Payments Consent      | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-scheduled-payment-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-scheduled-payment-consents)           |
+| Domestic Scheduled Payments              | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-scheduled-payments](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-scheduled-payments)                           |
+| Domestic Standing Orders Consent         | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-standing-order-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-standing-order-consents)                 |
+| Domestic Standing Orders                 | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-standing-orders](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-standing-orders)                                 |
+| International Payments Consent           | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-payment-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-payment-consents)                     |
+| International Payments                   | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-payments](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-payments)                                     |
+| International Scheduled Payments Consent | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-scheduled-payment-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-scheduled-payment-consents) |
+| International Scheduled Payments         | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-scheduled-payments](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-scheduled-payments)                 |
+| International Standing Orders Consent    | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-standing-order-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-standing-order-consents)       |
+| International Standing Orders            | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-standing-orders](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/international-standing-orders)                       |
 
 ## <a name="vrpendpoints"></a>Variable Recurring Payments (VRP) endpoints
+At the moment, the Model Bank v4.0 does not support the new PUT VRP or PATCH VRP endpoints introduced to allow VRP consent data to be migrated from the v3.1.x standards to the new v4.0 data schemas. These two new v4.0 VRP endpoints will be supported in a future Model Bank release.
 
-| Item                 | v3.1                                                                                                                                                         |
+| Item                 | v4.0                                                                                                                                                         |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Domestic VRP Consent | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-vrp-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-vrp-consents) |
-| Domestic VRP         | [https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-vrps](https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/pisp/domestic-vrps)                 |
+| Domestic VRP Consent | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-vrp-consents](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-vrp-consents) |
+| Domestic VRP         | [https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-vrps](https://rs1.obie.uk.ozoneapi.io/open-banking/v4.0/pisp/domestic-vrps)                 |
 
 
 ## Payment Debtor Test Accounts
@@ -150,6 +152,7 @@ Ozone Model Bank Collection Files
 </table>
 
 ## **Financial ID**
+Used in x-fapi-financial-id header where required.
 
 | **Item**           |
 | ------------------ |
@@ -157,79 +160,9 @@ Ozone Model Bank Collection Files
 
 ## Mobile Application
 
-TPPs that want to test their app-to-app or web-to-app redirects can use the new version of Ozone Authenticator App using the instructions below:
+At the moment Ozone Authenticator Mobile App does not support Model Bank v4.0. Support will be added in further Model Bank releases. 
+For support for v3.1.11, please see [Model Bank v3.1.11 documentation](https://github.com/OpenBankingUK/OBL-ModelBank-Integration/tree/v3.1.11).
 
-For Model bank users - Sandbox Mode with Mobile and Web Heimdall UI supported in parallel
-
-The below instructions were drafted for OBL Sandbox mobile app uplift mainly for the consumption of TPPs.
-
-1.  Install the Ozone Authenticator app from either [Play Store](https://play.google.com/store/apps/details?id=com.ozoneapi.OzoneAuthenticator) or [App Store](https://apps.apple.com/us/app/ozone-authenticator/id1592047641)
-    
-2.  Open the app and tap Continue.
-    
-
-<img src="./attachments/app_screen1.png" width="270" height="600"> 
-
-3.  Click the **\+ button** on the bottom right corner to add the model bank as the provider
-    
-
-<img src="./attachments/app_screen2.png" width="270" height="600"> 
-
-If prompted, accept the permission for the use of the camera.
-
-<img src="./attachments/app_screen3.png" width="270" height="600"> 
-
-4.  To add a provider, either scan the QR code or enter the code manually.
-    
-
-Scan the QR code below.
-
-<img src="./attachments/app_screen4.png" width="270" height="270"> 
-
-Enter provider code - “**8pozskdn**“ manually by clicking on the bottom toggle icon.
-
-<img src="./attachments/app_screen5.png" width="270" height="600"> 
-
-Or
-
-Click directly on this [OBL | Sandbox](https://www.auth-app.ozoneapi.co.uk/8pozskdn?only_add_provider=true) from your mobile browser to redirect to the registration step inside the app.
-
-5.  On being prompted for credentials enter Login Name - “**mits**” and Password - “**mits**”. Note: The credentials are case-sensitive.
-    
-
-<img src="./attachments/app_screen6.png" width="270" height="600"> 
-
-6.  Next, you will be prompted for **biometric authentication**. This could be a fingerprint scan or face id as per your device settings. Enabling biometric authentication on your device is a mandatory prerequisite for adding the provider.
-    
-7.  Next, you will be prompted for **OTP Verification**. Since this is running in Sandbox mode against test data, no actual SMS will be received on your device. Enter any **6 digits** like 123456 to proceed.
-    
-
-<img src="./attachments/app_screen7.png" width="270" height="600"> 
-
-8.  You should see a Congratulations Screen and on Continue redirected back to My Providers with the Model bank added to the list.
-    
-
-<img src="./attachments/app_screen8.png" width="270" height="600"> <img src="./attachments/app_screen9.png" width="270" height="600"> 
-
-9.  You can view the consent list by tapping the provider row on “My Providers” screen. Further, you can also revoke the consent.
-    
-
-**Consent Journey - AIS and PIS (Single Domestic Payments)**
-
-1.  Create a consent. Execute step 1 and 2 Post calls in the postman collection.
-    
-2.  Execute step 3 in the collection to get deep link. This will be in the form
-    
-
-“[https://www.auth-app.ozoneapi.co.uk/8pozskdn?client\_id=<>&response\_type=<>&scope=<>&request=<>](https://www.auth-app.ozoneapi.co.uk/7ob23ukz?client_id=3d8754f1-3f4f-4cd2-a7cd-c30071da4a16&response_type=code&scope=openid%20accounts&request=eyJhbGciOiJub25lIn0.eyJhdWQiOiJodHRwczovL2F1dGgxLnN0YWdpbmcub2JpZS51ay1odWIub3pvbmVhcGkuY28udWsiLCJleHAiOjE2OTI5NjUxODQsImlzcyI6IjNkODc1NGYxLTNmNGYtNGNkMi1hN2NkLWMzMDA3MWRhNGExNiIsInNjb3BlIjoib3BlbmlkIGFjY291bnRzIiwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly93d3cuYXV0aC1hcHAub3pvbmVhcGkuY28udWsvc2ltcGxlLXJlZGlyZWN0LXVybCIsInJlc3BvbnNlX3R5cGUiOiJjb2RlIiwiY2xpZW50X2lkIjoiM2Q4NzU0ZjEtM2Y0Zi00Y2QyLWE3Y2QtYzMwMDcxZGE0YTE2Iiwibm9uY2UiOiIxYzc4NjBlOS1iZTQyLTRjNTctYjEyMS0zM2VmZTU2MmJhNWMiLCJzdGF0ZSI6ImJkN2QzNTFkLTNmZDAtNDIyNy1hNzU1LTVlYjg0NmM2YTc3NSIsIm5iZiI6MTY5Mjk2NDY4NCwibG9naW5faGludCI6InJhc3RhbWFuIiwicmVzcG9uc2VUeXBlIjoiY29kZSIsImNsYWltcyI6eyJpZF90b2tlbiI6eyJvcGVuYmFua2luZ19pbnRlbnRfaWQiOnsidmFsdWUiOiJhYWMtMWNlNjE0OWMtZjc2Yy00ODAyLThjM2MtYWVjOTkyZTU1ZTYwIiwiZXNzZW50aWFsIjp0cnVlfX19fQ.)”
-
-It is important to note that if you directly copy the deep link generated from the Postman collection as a text on mobile and hit it, it will give an invalid request error due to the elimination of the last “.” in request param.
-
-So, either send the link on your mobile as a link or convert it as QR code to scan, or use visualizer.
-
-3.  Both AIS and PIS links will require biometric authentication.
-    
-4.  PIS will in addition require OTP verification. Since this is running in Sandbox mode against test data, no actual SMS will be received on your device. Enter any **6 digits** like 123456 to proceed.
 
 # Step-by-step guide
 
@@ -275,13 +208,13 @@ Here, the `ca.pem` file contains the Open Banking issuing and root certificate c
 
 ## <a name="setup"></a>Step 3: Setup TPP On Model Bank (TPP/Open Banking)
 
-Ozone banks allow TPP to onboard via dynamic client registration
+Ozone banks allow TPP to onboard via dynamic client registration.
 
 ### <a name="dcr"></a>3.1 Dynamic Client Registration (TPP)
 
 See [http://openid.net/specs/openid-connect-registration-1_0-21.html](http://openid.net/specs/openid-connect-registration-1_0-21.html) 
 
-Claims required in dynamic client registration for Ozone Banks
+Claims required in dynamic client registration for Ozone Banks:
 
 
 | Field Name                      | Example Values                                                                                                                  | Description                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -303,150 +236,19 @@ Claims required in dynamic client registration for Ozone Banks
 | id_token_signed_response_alg    | RS256                                                                                                                           | JWS algorithm                                                                                                                                                                                                                                                                                                                                                                                 |
 | software_statement              |                                                                                                                                 | Since the SSA is essentially a JWT, you can decode it (for example, using [https://jwt.davetonge.co.uk/](https://jwt.davetonge.co.uk/)).                                                                                                                                                                                                                                                          |
 
-#### <a name="jwt"></a>3.1.1 Example Registration Request JWT (Python)
-
-##### This code is compatible with python 3.8 and requires the `jwcrypto` and `requests` modules (`pip install jwcrypto requests`)
-
-```python
-import time, uuid
-from jwcrypto import jwt
-from jwcrypto import jwk
-
-# The software statement ID (software_id) of the software statement created in software statements (MIT).
-SOFTWARE_STATEMENT_ID = ""
-
-#  Value of the kid parameter associated with the signing certificate generated in Generate a
-# transport/signing certificate pair (please note that you need to use the signing certificate kid).
-KID = ""
-
-# Your private signing key. You will use this to sign your JWT.
-PRIVATE_RSA_KEY = """
------BEGIN PRIVATE KEY-----
------END PRIVATE KEY-----
-"""
-
-# Software statement assertion (SSA), generated through DFI or Directory API
-SOFTWARE_STATEMENT = ""
-
-def make_registration_jwt(software_statement_id: str, kid: str, software_statement: str) -> str:
-    jwt_iat = int(time.time())
-    jwt_exp = jwt_iat + 3600
-    header = dict(alg='PS256', kid=kid, typ='JWT')
-    claims = dict(
-        token_endpoint_auth_signing_alg="PS256",
-        grant_types=["authorization_code", "client_credentials"],
-        subject_type="public",
-        application_type="web",
-        iss=software_statement_id,
-        redirect_uris=["https://app.getpostman.com/oauth2/callback"], # as registered in the software statement
-        token_endpoint_auth_method="client_secret_basic",
-        aud="0015800001041RHAAY",
-        scope= "openid accounts payments",   #accounts for AISP or payments for PISP or both
-        request_object_signing_alg="none",
-        exp=jwt_exp,
-        iat=jwt_iat,
-        jti=str(uuid.uuid4()),
-        response_types=["code", "code id_token"],
-        id_token_signed_response_alg="PS256",
-        software_statement=software_statement
-     )
-
-    token = jwt.JWT(header=header, claims=claims)
-    key_obj = jwk.JWK.from_pem(PRIVATE_RSA_KEY.encode('latin-1'))
-    token.make_signed_token(key_obj)
-    signed_token = token.serialize()
-
-    print(signed_token)
-    return signed_token
-
-make_registration_jwt(SOFTWARE_STATEMENT_ID, KID, SOFTWARE_STATEMENT)
-
-
-```
-
-##### <a name="reg_endpoint">3.1.2 Request Registration Endpoint Example (Python): 
-
-```python
-import requests
-
-headers = {'Content-Type': 'application/jwt'}
-client = ('./transport.pem', './transports.key')
-response = requests.post("https://rs1.obie.uk.ozoneapi.io/open-banking/v3.1/dynamic-client-registration/v3.1/register",
-                         registration_request,
-                         headers=headers,
-                         verify=False,
-                         cert=client
-                        )
-print(response.content)
-```
-
-The response you get from this registration is exactly the same as the one described by the OIDC dynamic registration.
-
-You should now have successfully onboarded your TPP with the Modelo ASPSP and received a **client ID**; you will need this client ID for future interactions with the ASPSP.
-
-##### <a name="acquisition">3.1.3 Basic token acquisition (optional)
-
-At this stage you should be able to acquire an access token using `curl`, where values for `$CLIENT_ID` and `$CLIENT_SECRET` are provided in the response from the DCR request.
-
-```
-curl --cacert ca.pem  \
---request POST 'https://as1.obie.uk.ozoneapi.io/token' \
--u "$CLIENT_ID:$CLIENT_SECRET" \
---data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'scope=accounts openid' \
---key transport.key --cert transport.pem
-```
-
-Expected result:
-
-```json
-{"access_token":"70123bf6-1111-4181-8353-4de543268d2b","token_type":"Bearer","expires_in":300}
-```
-
-##### <a name="env_file_download">3.1.4 Environment File download
-
-Once a TPP successfully registers to Ozone, they can download the environment file for their client via an ozone helper api
-
-Endpoint: [https://rs1.obie.uk.ozoneapi.io/ozone/v1.0/postman/environment](https://rs1.obie.uk.ozoneapi.io/ozone/v1.0/postman/environment)
-
-Headers:
-
-Authorization: Basic <token>
-
-The token is the base64 encoded string of clientId: clientsecret
-
-![Screenshot_202020-04-28_version=1&api=v2.png](./attachments/Screenshot_202020-04-28_version=1&api=v2.png)
- 
-
-On successful response, the TPP can then save the environment file to their local system.
-
-You can accomplish the above using the following curl command:
-
-```bash
-CLIENT_ID='client_id' 
-CLIENT_SECRET='client_secret'
-curl --cacert ca.pem  --request GET 'https://rs1.obie.uk.ozoneapi.io/ozone/v1.0/postman/environment' \
--u "$CLIENT_ID:$CLIENT_SECRET" \
---key transport.key --cert transport.pem > $CLIENT_ID.postman_environment
-```
-
 
 
 ## <a name="import_postman">Step 4: Import Environment Files and Collections To Postman (TPP)
 
-### 4.1 Import Environment Files and Collections into Postman (TPP)
+### 4.1 Import Collections and setup Environment in Postman (TPP)
 
-![Image 1.jpeg](./attachments/Image%201.jpeg)
+![Image 1.jpeg](./attachments/4-1-Import-Files.png)
  
-
-
-
-![Image 2.png](./attachments/Image%202.png)
 
 
 ### 4.2 Check URLs and Environments are loaded successfully (TPP)
 
-![Image 3.png](./attachments/Image%203.png)
+![Image 2.png](./attachments/4-2-Collection.png)
 
 
 ### 4.3 Add Client Certificates
@@ -455,7 +257,7 @@ Add the following Modelo and Referenco bank endpoints into Postman;
 
 **.obie.uk.ozoneapi.io:**
 
-![image-20230720-173755.png](./attachments/image-20230720-173755.png)
+![Image 3.png](./attachments/4-3-Certificates.png)
 
 
 The CRT should be set to the transport certificate downloaded from the open banking directory. The Key value should be set to the private key for the transport certificate.
@@ -470,19 +272,19 @@ The CRT should be set to the transport certificate downloaded from the open bank
 
 ### 5.1 Client Credentials Grant (TPP)
 
-![Image 5.png](./attachments/Image%205.png)
+![Image 4.png](./attachments/4-4-Token.png)
 
 
 ### 5.2 Account Access Consent(TPP)
 
-![Image 6.jpeg](./attachments/Image%206.jpeg)
+![Image 5.png](./attachments/4-5-Consent.png)
 
 
 ### 5.3 PSU Consent Flow(Open Banking and TPP)
 
-TPPs can generate the consent flow URL via Postman.
+TPPs can initiate the consent authorisation flow URL via Postman.
 
-![Image 7.jpeg](./attachments/Image%207.jpeg)
+![Image 6.png](./attachments/4-6-Auth-Url.png)
 
 Once the URL is constructed, open the URL to initiate the PSU consent flow.
 
@@ -492,12 +294,12 @@ Once the URL is constructed, open the URL to initiate the PSU consent flow.
 
 ### 6.1 Authenticate the user (Open Banking)
 
-![image-20230720-174241.png](./attachments/image-20230720-174241.png)
+![Image 7.png](./attachments/4-7-AuthN.png)
 
 
 ### 6.2 Select accounts (Open Banking)
 
-![image-20230720-174338.png](./attachments/image-20230720-174338.png)
+![Image 8.png](./attachments/4-8-AuthZ.png)
 
 
 Once the PSU consent is successful, Ozone Bank will redirect back to the redirect URI.
@@ -506,12 +308,12 @@ Once the PSU consent is successful, Ozone Bank will redirect back to the redirec
 
 
 
-![Image 10.jpeg](./attachments/Image%2010.jpeg)
+![Image 9.png](./attachments/4-9-AutCode.png)
 
 
 ### 6.4 Generate the access token (TPP)
 
-![Image 11.png](./attachments/Image%2011.png)
+![Image 10.png](./attachments/4-10-AccToken.png)
 
 
 ## <a name="retrieve">Step 7: Retrieve Account and Transaction Data (TPP)
@@ -520,10 +322,10 @@ Once the PSU consent is successful, Ozone Bank will redirect back to the redirec
 
 
 
-![Image 12.png](./attachments/Image%2012.png)
+![Image 11.png](./attachments/4-11-Accounts.png)
 
 
 ### 7.2 Retrieve Transaction Data
 
-![Image 13.png](./attachments/Image%2013.png)
+![Image 12.png](./attachments/4-12-Balances.png)
 
