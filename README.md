@@ -261,9 +261,9 @@ The TPP should run the following check to ensure that it has a valid certificate
 
 ``` 
 curl https://as1.obie.uk.ozoneapi.io/token
--cacert ca.pem
--key {tpp-key-file}
--cert {tpp-pem-file}
+--cacert ca.pem
+--key {tpp-key-file}
+--cert {tpp-pem-file}
 ```
 
 Here, `tpp-key-file` is the file that contains the TPPs private key and `tpp-cert-file` contains the transport certificate (downloaded from Sandbox).
