@@ -99,7 +99,7 @@ At the moment, the Model Bank v4.0 does not support the new PUT VRP or PATCH VRP
 </tr>
 
 <tr>
-<td> mits </td>
+<td> Username: mits Password: mits </td>
 
 <td>
 
@@ -116,7 +116,7 @@ At the moment, the Model Bank v4.0 does not support the new PUT VRP or PATCH VRP
 </tr>
 
 <tr>
-<td> mits </td>
+<td>  Username: mits Password: mits </td>
 
 <td>
 
@@ -133,7 +133,7 @@ At the moment, the Model Bank v4.0 does not support the new PUT VRP or PATCH VRP
 </tr>
 
 <tr>
-<td> rora </td>
+<td>  Username: rora Password: rora </td>
 
 <td>
 
