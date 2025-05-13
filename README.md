@@ -8,11 +8,11 @@
 - [Change Log](#change-log)
 - [Access Pre-Requisites](#access-pre-requisites)
 - [Testing Access](#testing-access)
-- [Using Postman](#using-postman)
+- [Postman](#postman)
   - [Introduction into Postman](#introduction-into-postman)
   - [Setting up Postman](#setting-up-postman)
     - [1. Install Postman](#1-install-postman)
-    - [2. Download Postman Collection](#2-download-postman-collection)
+    - [2. Import Postman Collection](#2-import-postman-collection)
     - [3. Configure MTLS Certificates](#3-configure-mtls-certificates)
     - [4. Adjust Postman General Settings](#4-adjust-postman-general-settings)
     - [5. Register Your TPP Client](#5-register-your-tpp-client)
@@ -20,8 +20,10 @@
     - [6. Request the Postman Environment File](#6-request-the-postman-environment-file)
     - [7. Import Postman Environment File](#7-import-postman-environment-file)
     - [8. Configure Environment Variables](#8-configure-environment-variables)
-- [Test Accounts](#test-accounts)
-- [Financial ID](#financial-id)
+- [Using Postman](#using-postman)
+  - [Test Accounts](#test-accounts)
+  - [Financial ID](#financial-id)
+  - [Example of AIS Flow using Postman and OBL Model Bank](#example-of-ais-flow-using-postman-and-obl-model-bank)
 - [FAPI Profile Support](#fapi-profile-support)
 - [Endpoints](#endpoints)
   - [OpenID Connect Endpoints](#openid-connect-endpoints)
@@ -98,7 +100,7 @@ You can use the following curl command to confirm that your certificate and MTLS
 
 A successful TLS handshake (even with an error response) confirms that your certificate is valid for use with OBIE's MATLS-secured endpoints.
 
-# Using Postman
+# Postman
 ## Introduction into Postman
 
 The OBL Model Bank Sandbox does not include a built-in graphical user interface (GUI). While developers can connect their own TPP applications directly to the Model Bank — as it mirrors the behaviour of real production endpoints — the recommended starting point is to use [Postman](https://www.postman.com/) to explore and test all available APIs.
@@ -209,8 +211,8 @@ Edit the imported environment and set the following variables:
 ```bash
 tr -d '\n' < signing.key > single-line-signing.key
 ```
-
-# Test Accounts
+# Using Postman
+## Test Accounts
 The following test accounts are provided for use as Payment Debtor Accounts during sandbox testing:
 
 <table>
@@ -271,12 +273,49 @@ The following test accounts are provided for use as Payment Debtor Accounts duri
 
 </table>
 
-# Financial ID
+## Financial ID
 Next value should be used as `x-fapi-financial-id` where required:
 
 | **x-fapi-financial-id**           |
 | ------------------ |
 | 0015800001041RHAAY |
+
+## Exemple of AIS Flow using Postman and OBL Model Bank
+
+1. Get client credentials grant access token:
+![Image 4.png](./attachments/4-4-Token.png)
+
+
+2. Create account access consent resource:
+![Image 5.png](./attachments/4-5-Consent.png)
+
+
+3. Generate PSU Authorisation URL:
+![Image 6.png](./attachments/4-6-Auth-Url.png)
+
+4. Authenticate the user:
+![Image 7.png](./attachments/4-7-AuthN.png)
+
+
+5. Select accounts:
+![Image 8.png](./attachments/4-8-AuthZ.png)
+
+
+6. Copy the Authcode from the URL:
+![Image 9.png](./attachments/4-9-AutCode.png)
+
+
+7. Generate the access token using Authcode:
+![Image 10.png](./attachments/4-10-AccToken.png)
+
+
+8. Retrieve Account Data:
+![Image 11.png](./attachments/4-11-Accounts.png)
+
+
+9. Retrieve Transaction Data:
+![Image 12.png](./attachments/4-12-Balances.png)
+
 
 # FAPI Profile support
 Currently, the Sandbox provides parallel running for versions v3.1.11 and v4.0, both with **FAPI 1.0 Advanced Profile** enabled.
