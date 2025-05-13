@@ -53,7 +53,7 @@ Currently there are no know issues.
 # Change Log
 
 <details>
-  <summary>2025.17 - Deployed on 12th of May 2025 </summary>
+  <summary>2025.17</summary>
 
 *  __New GET `/environment` Endpoint Support Added:__ A new GET `/environment` endpoint has been introduced, allowing clients to generate and download a pre-configured Postman environment file for use with the Model Bank Sandbox.
 
