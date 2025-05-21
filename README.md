@@ -48,7 +48,7 @@ Currently Supported version of Open Banking Read/Write Standard is:
 * [v4.0.0-Update-3](https://github.com/OpenBankingUK/read-write-api-specs/tree/v4.0-Update-3)
 # Known Issues
 
-Currently there are no know issues.
+Currently there are no known issues.
 
 # Change Log
 
@@ -71,7 +71,7 @@ To proceed with onboarding, the following prerequisites must be met:
 2. The TPP has created at least one Software Statement within the Directory Sandbox environment.
 3. For each Software Statement, the TPP has generated at least one valid transport certificate.
 4. For each Software Statement, the TPP has configured at least one redirect URI.
-5. The TPP has downloaded and securely stored the [OBIE Root and Issuing Certificates](https://github.com/OpenBankingUK/OBL-ModelBank-Integration/blob/master/attachments/OBSandBoxCACerts.zip) required for trusted communication.
+5. The TPP has downloaded and securely stored the [OBL Root and Issuing Certificates](https://github.com/OpenBankingUK/OBL-ModelBank-Integration/blob/master/attachments/OBSandBoxCACerts.zip) required for trusted communication.
 
 # Testing Access
 Before proceeding with onboarding, it's recommended that TPPs validate their MTLS setup and transport certificates using the `/.well-known/openid-configuration` and token endpoints provided by the sandbox:
@@ -98,7 +98,7 @@ You can use the following curl command to confirm that your certificate and MTLS
 * __{tpp-key-file}:__ Your TPP's private key.
 * __{tpp-pem-file}:__ Your transport certificate (downloaded from the OB Directory Sandbox).
 
-A successful TLS handshake (even with an error response) confirms that your certificate is valid for use with OBIE's MATLS-secured endpoints.
+A successful TLS handshake (even with an error response) confirms that your certificate is valid for use with OBL's MATLS-secured endpoints.
 
 # Postman
 ## Introduction into Postman
