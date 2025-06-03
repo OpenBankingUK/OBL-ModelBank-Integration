@@ -35,13 +35,13 @@
 
 # Introduction
 
-The Ozone implementation of the OBL Model Bank Sandbox provides one or more fully functional Model Banks designed to simulate a real-world Open Banking environment. Each Model Bank includes:
+The OBL Model Bank provides provides one or more fully functional Model Banks designed to simulate a real-world Open Banking environment. Each Model Bank includes:
 * A complete suite of API components (e.g. Authorization Server, Resource Server, etc.) that fully conform to the Open Banking Read/Write Standard and replicate the behaviour of production APIs.
 * Synthetic test data, including example users, credentials, accounts, transactions, and more — all designed to support safe, realistic testing without involving any real customer information.
 
 # Current Version
 
-Current version of the OBL Model Bank Sandbox is:
+Current version of the OBL Model Bank is:
 * 2025.17
 
 Currently Supported version of Open Banking Read/Write Standard is:
@@ -103,13 +103,13 @@ A successful TLS handshake (even with an error response) confirms that your cert
 # Postman
 ## Introduction into Postman
 
-The OBL Model Bank Sandbox does not include a built-in graphical user interface (GUI). While developers can connect their own TPP applications directly to the Model Bank — as it mirrors the behaviour of real production endpoints — the recommended starting point is to use [Postman](https://www.postman.com/) to explore and test all available APIs.
+The OBL Model Bank does not include a built-in graphical user interface (GUI). While developers can connect their own TPP applications directly to the Model Bank — as it mirrors the behaviour of real production endpoints — the recommended starting point is to use [Postman](https://www.postman.com/) to explore and test all available APIs.
 
 This allows for quick validation of connectivity, authentication flows, and endpoint responses before integrating with your own application.
 
 ## Setting up Postman
 
-Follow the steps below to configure Postman for interacting with the OBL Model Bank Sandbox, including importing collections, environments, and setting up your certificates.
+Follow the steps below to configure Postman for interacting with the OBL Model Bank, including importing collections, environments, and setting up your certificates.
 
 ### 1. Install Postman
 Download and install [Postman](https://www.postman.com/downloads) from the official website
@@ -321,7 +321,7 @@ Next value should be used as `x-fapi-financial-id` where required:
 Currently, the Sandbox provides parallel running for versions v3.1.11 and v4.0, both with **FAPI 1.0 Advanced Profile** enabled.
 
 # Endpoints
-Currently, the Sandbox provides parallel running for versions v3.1.11 and v4.0. For 3.1.11 endpoint URLs, please see [Model Bank v3.1.11 documentation](https://github.com/OpenBankingUK/OBL-ModelBank-Integration/tree/v3.1.11).
+Currently, two instances of the Model Bank are available providing support for both version v3.1.11 and v4.0. For 3.1.11 endpoint URLs, please see [Model Bank v3.1.11 documentation](https://github.com/OpenBankingUK/OBL-ModelBank-Integration/tree/v3.1.11).
 
 ## OpenID Connect endpoints
 
