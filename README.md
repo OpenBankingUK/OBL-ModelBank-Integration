@@ -45,7 +45,7 @@ Current version of the OBL Model Bank is:
 * 2025.17
 
 Currently Supported version of Open Banking Read/Write Standard is:
-* [v4.0.0-Update-3](https://github.com/OpenBankingUK/read-write-api-specs/tree/v4.0-Update-3)
+* [v4.0.0-Update-4](https://github.com/OpenBankingUK/read-write-api-specs/tree/v4.0-Update-4)
 # Known Issues
 
 Currently there are no known issues.
