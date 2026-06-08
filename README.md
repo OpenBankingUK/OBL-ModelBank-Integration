@@ -325,7 +325,22 @@ Once the PSU consent is successful, Ozone Bank will redirect back to the redirec
 ![Image 11.png](./attachments/4-11-Accounts.png)
 
 
+
+
 ### 7.2 Retrieve Transaction Data
 
 ![Image 12.png](./attachments/4-12-Balances.png)
 
+# 8. Model Bank - Known Issues List
+
+- list of known reported issues with the Model Bank
+- these issues are targeted to be addressed in the upcoming release of the v4.0.1 standards-conformant model bank
+
+| Issue number | Description |
+|------------- | ----------- |
+| 8.1          | Some issues with handling of detailed vs basic permissions for statements and transactions.<br> Some fields that should only be available with detailed permission can be accessed using a basic permission <br> e.g. Data.Statement.StatementAmount for statements APIs|
+| 8.2          | On Model Bank v4.0, certain negative scenarios for /domestic-vrp-consents can generate non-conformant<br>error response payloads i.e. not 4-character enumerated error codes in the 3.1.x version-style |
+| 8.3          | Mutually exclusive fields in standing order consents can be provided together and the request will succeed.<br> In version 4.0 you can provide FinalPaymentDateTime and CountPerPeriod and the<br>payload will succeed.|
+| 8.4          | Sending a POST request with an incorrect Content-Type header will currently return a 500 error<br>whereas a 415 Unsupported Media Type error should be returned.|
+| 8.5          | In VRP consents, the Data.Refund object is not provided in the consent response even when ReadRefundAccount is set to 'Yes' in the consent request |
+| 8.6          | In VRP consents, the Data.DebtorAccount object is not provided in the consent response even when this information is known within the platform |
