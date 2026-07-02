@@ -37,7 +37,7 @@ Ozone Model Bank Collection Files
 
 [UK OBL v4.0.postman_collection.json](./attachments/UK%20OBL%20v4.0.postman_collection.json)
 
-# FAPI Profile support 
+# FAPI Profile support
 Currently, the Sandbox provides parallel running for versions v3.1.11 and v4.0, both with **FAPI 1.0 Advanced Profile** enabled.
 
 # Endpoints
@@ -160,7 +160,7 @@ Used in x-fapi-financial-id header where required.
 
 ## Mobile Application
 
-At the moment Ozone Authenticator Mobile App does not support Model Bank v4.0. Support will be added in further Model Bank releases. 
+At the moment Ozone Authenticator Mobile App does not support Model Bank v4.0. Support will be added in further Model Bank releases.
 For support for v3.1.11, please see [Model Bank v3.1.11 documentation](https://github.com/OpenBankingUK/OBL-ModelBank-Integration/tree/v3.1.11).
 
 
@@ -192,7 +192,7 @@ One of these json endpoints is the token endpoint which you can use to validate 
 
 The TPP should run the following check to ensure that it has a valid certificate:
 
-``` 
+```
 curl https://as1.obie.uk.ozoneapi.io/token
 -cacert ca.pem
 -key {tpp-key-file}
@@ -212,7 +212,7 @@ Ozone banks allow TPP to onboard via dynamic client registration.
 
 ### <a name="dcr"></a>3.1 Dynamic Client Registration (TPP)
 
-See [http://openid.net/specs/openid-connect-registration-1_0-21.html](http://openid.net/specs/openid-connect-registration-1_0-21.html) 
+See [http://openid.net/specs/openid-connect-registration-1_0-21.html](http://openid.net/specs/openid-connect-registration-1_0-21.html)
 
 Claims required in dynamic client registration for Ozone Banks:
 
@@ -344,3 +344,4 @@ Once the PSU consent is successful, Ozone Bank will redirect back to the redirec
 | 8.4          | Sending a POST request with an incorrect Content-Type header will currently return a 500 error<br>whereas a 415 Unsupported Media Type error should be returned.|
 | 8.5          | In VRP consents, the Data.Refund object is not provided in the consent response even when ReadRefundAccount is set to 'Yes' in the consent request |
 | 8.6          | In VRP consents, the Data.DebtorAccount object is not provided in the consent response even when this information is known within the platform |
+| 8.7          | In VRP consents, following consent deletion via the DELETE endpoint, the GET endpoint continues to return the consent body instead of the expected HTTP 400 response. |
