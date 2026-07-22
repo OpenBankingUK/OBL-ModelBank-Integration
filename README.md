@@ -338,6 +338,6 @@ Once the PSU consent is successful, Ozone Bank will redirect back to the redirec
 
 | Issue number | Description |
 |------------- | ----------- |
-| 8.1          | In VRP consents, following consent deletion via the DELETE endpoint, the GET endpoint continues to return the consent body instead of the expected HTTP 400 response.|
-| 8.2          | When required fields from the payload are missing or values in them are mismatched, the Model Bank currently responds with HTTP 5xx error instead of the expected HTTP 4xx response.|
-| 8.3          | Due to wording typo in OBL spec page  https://openbankinguk.github.io/read-write-api-site3/v4.0.1/resources-and-data-models/pisp/domestic-standing-order-consents.html#notes  regarding the mutual exclusivity of CountPerPeriod and FinalPaymentDateTime, which should be between CountPerPeriod and PointInTime, the Model Bank incorrectly rejects requests containing both CountPerPeriod and FinalPaymentDateTime instead of CountPerPeriod and PointInTime.|
+| 8.8          | In VRP consents, following consent deletion via the DELETE endpoint, the GET endpoint continues to return the consent body instead of the expected HTTP 400 response.|
+| 8.9          | When required fields from the payload are missing or values in them are mismatched, the Model Bank currently responds with HTTP 5xx error instead of the expected HTTP 4xx response.|
+| 8.10          | Due to wording typo in OBL spec page  https://openbankinguk.github.io/read-write-api-site3/v4.0.1/resources-and-data-models/pisp/domestic-standing-order-consents.html#notes  regarding the mutual exclusivity of CountPerPeriod and FinalPaymentDateTime, which should be between CountPerPeriod and PointInTime, the Model Bank incorrectly rejects requests containing both CountPerPeriod and FinalPaymentDateTime instead of CountPerPeriod and PointInTime.|
