@@ -338,10 +338,6 @@ Once the PSU consent is successful, Ozone Bank will redirect back to the redirec
 
 | Issue number | Description |
 |------------- | ----------- |
-| 8.1          | Some issues with handling of detailed vs basic permissions for statements and transactions.<br> Some fields that should only be available with detailed permission can be accessed using a basic permission <br> e.g. Data.Statement.StatementAmount for statements APIs|
-| 8.2          | On Model Bank v4.0, certain negative scenarios for /domestic-vrp-consents can generate non-conformant<br>error response payloads i.e. 3.1.x version-style code is returned instead of the 4 digit v4 value.|
-| 8.3          | Mutually exclusive fields in standing order consents can be provided together and the request will succeed.<br> In version 4.0 you can provide FinalPaymentDateTime and CountPerPeriod and the<br>payload will succeed.|
-| 8.4          | Sending a POST request with an incorrect Content-Type header will currently return a 500 error<br>whereas a 415 Unsupported Media Type error should be returned.|
-| 8.5          | In VRP consents, the Data.Refund object is not provided in the consent response even when ReadRefundAccount is set to 'Yes' in the consent request |
-| 8.6          | In VRP consents, the Data.DebtorAccount object is not provided in the consent response even when this information is known within the platform |
-| 8.7          | In VRP consents, following consent deletion via the DELETE endpoint, the GET endpoint continues to return the consent body instead of the expected HTTP 400 response. |
+| 8.8          | In VRP consents, following consent deletion via the DELETE endpoint, the GET endpoint continues to return the consent body instead of the expected HTTP 400 response.|
+| 8.9          | When required fields from the payload are missing or values in them are mismatched, the Model Bank currently responds with HTTP 5xx error instead of the expected HTTP 4xx response.|
+| 8.10          | Due to wording typo in OBL spec page  https://openbankinguk.github.io/read-write-api-site3/v4.0.1/resources-and-data-models/pisp/domestic-standing-order-consents.html#notes  regarding the mutual exclusivity of CountPerPeriod and FinalPaymentDateTime, which should be between CountPerPeriod and PointInTime, the Model Bank incorrectly rejects requests containing both CountPerPeriod and FinalPaymentDateTime instead of CountPerPeriod and PointInTime.|
