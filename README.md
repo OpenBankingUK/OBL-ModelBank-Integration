@@ -95,11 +95,11 @@ At the moment, the Model Bank v4.0 does not support the new PUT VRP or PATCH VRP
 
 <table>
 <tr>
-<td><b>User</b></td> <td><b>Debtor Account</b></td>
+<td><b>User/Password</b></td> <td><b>Debtor Account</b></td>
 </tr>
 
 <tr>
-<td> mits </td>
+<td> mits/mits </td>
 
 <td>
 
@@ -116,7 +116,7 @@ At the moment, the Model Bank v4.0 does not support the new PUT VRP or PATCH VRP
 </tr>
 
 <tr>
-<td> mits </td>
+<td> mits/mits </td>
 
 <td>
 
@@ -133,7 +133,7 @@ At the moment, the Model Bank v4.0 does not support the new PUT VRP or PATCH VRP
 </tr>
 
 <tr>
-<td> rora </td>
+<td> rora/rora </td>
 
 <td>
 
@@ -142,6 +142,38 @@ At the moment, the Model Bank v4.0 does not support the new PUT VRP or PATCH VRP
     "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
     "Identification" : "10000109010101",
     "Name" : "Mario International"
+}
+```
+
+</td>
+
+</tr>
+<tr>
+<td> gost/gost </td>
+
+<td>
+
+```json
+{
+    "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
+    "Identification" : "20113554832762",
+    "Name" : "Antmusic 1981 Limited - Current"
+}
+```
+
+</td>
+
+</tr>
+<tr>
+<td> gost/gost </td>
+
+<td>
+
+```json
+{
+    "SchemeName" : "UK.OBIE.SortCodeAccountNumber",
+    "Identification" : "20113554832761",
+    "Name" : "Stuart Goddard - Current"
 }
 ```
 
@@ -341,3 +373,4 @@ Once the PSU consent is successful, Ozone Bank will redirect back to the redirec
 | 8.8          | In VRP consents, following consent deletion via the DELETE endpoint, the GET endpoint continues to return the consent body instead of the expected HTTP 400 response.|
 | 8.9          | When required fields from the payload are missing or values in them are mismatched, the Model Bank currently responds with HTTP 5xx error instead of the expected HTTP 4xx response.|
 | 8.10          | Due to wording typo in OBL spec page  https://openbankinguk.github.io/read-write-api-site3/v4.0.1/resources-and-data-models/pisp/domestic-standing-order-consents.html#notes  regarding the mutual exclusivity of CountPerPeriod and FinalPaymentDateTime, which should be between CountPerPeriod and PointInTime, the Model Bank incorrectly rejects requests containing both CountPerPeriod and FinalPaymentDateTime instead of CountPerPeriod and PointInTime.|
+|8.11           | When requests are made for specific account IDs that are not existing, the Model Bank currently returns the API error code (UK.OBIE.Field.Invalid) in the Errors[].ErrorCode field instead of the low-level internal error code (for example U001) defined by the OBErrorResponse1 schema.|
