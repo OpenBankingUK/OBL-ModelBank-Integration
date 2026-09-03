@@ -370,4 +370,4 @@ Once the PSU consent is successful, Ozone Bank will redirect back to the redirec
 
 | Issue number | Description |
 |------------- | ----------- |
-|8.11           | When requests are made for specific account IDs that are not existing, the Model Bank currently returns the API error code (UK.OBIE.Field.Invalid) in the Errors[].ErrorCode field instead of the low-level internal error code (for example U001) defined by the OBErrorResponse1 schema.|
+| N/A | N/A |
