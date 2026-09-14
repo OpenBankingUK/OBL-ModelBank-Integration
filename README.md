@@ -366,8 +366,9 @@ Once the PSU consent is successful, Ozone Bank will redirect back to the redirec
 # 8. Model Bank - Known Issues List
 
 - list of known reported issues with the Model Bank
-- these issues are targeted to be addressed in the upcoming release of the v4.0.1 standards-conformant model bank
 
 | Issue number | Description |
 |------------- | ----------- |
-| N/A | N/A |
+| KI 8.12      | For v3.1.11, GET /accounts/{AccountId}/transactions and GET /transactions incorrectly return fields that should only be exposed under ReadTransactionsDetail when the presented access token derives from a consent granting ReadTransactionsBasic without ReadTransactionsDetail. |
+| KI 8.13      | For v3.1.11, GET domestic VRP consent returns 200 OK with status set to Cancelled after a successful DELETE (204 No Content), instead of the expected 400 Bad Request for a deleted consent. |
+| KI 8.14      | For v3.1.11, Model Bank correctly rejects a domestic payment consent request whose detached-JWS protected header omits the mandatory iss claim, but returns UK.OBIE.UnexpectedError instead of the expected UK.OBIE.Signature.MissingClaim error code. |
