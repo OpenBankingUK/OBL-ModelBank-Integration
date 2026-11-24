@@ -369,4 +369,4 @@ Once the PSU consent is successful, Ozone Bank will redirect back to the redirec
 
 | Issue number | Description |
 |------------- | ----------- |
-| KI 8.14      | For v3.1.11, Model Bank correctly rejects a domestic payment consent request whose detached-JWS protected header omits the mandatory iss claim, but returns UK.OBIE.UnexpectedError instead of the expected UK.OBIE.Signature.MissingClaim error code. |
+| KI 8.15      | For v3.1.11, Model Bank correctly rejects a domestic payment consent request whose detached-JWS protected header omits the mandatory iat and tan claims, but returns UK.OBIE.UnexpectedError instead of the expected UK.OBIE.Signature.MissingClaim error code. |
